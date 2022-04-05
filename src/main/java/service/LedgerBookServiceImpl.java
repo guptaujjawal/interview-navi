@@ -17,7 +17,7 @@ public class LedgerBookServiceImpl implements LedgerBookService {
         double amountPaidInEMIAndLumpSum;
         int totalEMI = book.getTerm() * 12;
         int emiLeft;
-        if(book.getLumpSumEMI() > 0 && book.getLumpSum() > 0 && book.getEmi() > book.getLumpSumEMI()) {
+        if(book.getLumpSumEMI() >= 0 && book.getLumpSum() > 0 && book.getEmi() > book.getLumpSumEMI()) {
             amountPaidInEMIAndLumpSum = (emiAmount * book.getEmi()) + book.getLumpSum();
             double amountLeft = totalAmount - amountPaidInEMIAndLumpSum;
             emiLeft = (int) Math.ceil(amountLeft/emiAmount);
