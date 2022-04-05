@@ -2,6 +2,8 @@ package service;
 
 import domain.LedgerBook;
 
+import java.text.DecimalFormat;
+
 /**
  * Implementation for LedgerBookService
  */
@@ -23,8 +25,9 @@ public class LedgerBookServiceImpl implements LedgerBookService {
             emiLeft = totalEMI - book.getEmi();
             amountPaidInEMIAndLumpSum = emiAmount * book.getEmi();
         }
-        String output = book.getBankName() +" "+ book.getBorrowerName()+" "+ amountPaidInEMIAndLumpSum+
-                " "+ emiLeft;
+        DecimalFormat format = new DecimalFormat("0.#");
+        String output = book.getBankName() +" "+ book.getBorrowerName()+" "+ format.format(amountPaidInEMIAndLumpSum) +
+                " "+ format.format(emiLeft);
         System.out.println(output);
         return output;
     }

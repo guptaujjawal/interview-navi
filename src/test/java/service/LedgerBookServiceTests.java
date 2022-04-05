@@ -14,7 +14,7 @@ public class LedgerBookServiceTests {
         //Prepare
         LedgerBook book = new LedgerBook("IDIDI", "Dale", 10000, 5, 4);
         book.setEmi(5);
-        String expected = "IDIDI Dale 1000.0 55";
+        String expected = "IDIDI Dale 1000 55";
         //Execute
         String actual = ledgerBookService.calculateBalance(book);
         //Assert
@@ -26,7 +26,7 @@ public class LedgerBookServiceTests {
         //Prepare
         LedgerBook book = new LedgerBook("MBI", "Harry", 2000, 2, 2);
         book.setEmi(12);
-        String expected = "MBI Harry 1044.0 12";
+        String expected = "MBI Harry 1044 12";
         //Execute
         String actual = ledgerBookService.calculateBalance(book);
         //Assert
@@ -40,7 +40,7 @@ public class LedgerBookServiceTests {
         book.setLumpSumEMI(5);
         book.setLumpSum(1000);
         book.setEmi(3);
-        String expected = "UON Shelly 1326.0 9";
+        String expected = "UON Shelly 1326 9";
         //Execute
         String actual = ledgerBookService.calculateBalance(book);
         //Assert
@@ -54,7 +54,7 @@ public class LedgerBookServiceTests {
         book.setLumpSumEMI(10);
         book.setLumpSum(5000);
         book.setEmi(12);
-        String expected = "MBI Harry 9044.0 10";
+        String expected = "MBI Harry 9044 10";
         //Execute
         String actual = ledgerBookService.calculateBalance(book);
         //Assert
